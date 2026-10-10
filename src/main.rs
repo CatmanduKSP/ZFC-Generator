@@ -26,4 +26,5 @@ fn main(){
     }
 
     println!("\n{}", final_zfc);
+    println!("\nlength: {}", final_zfc.len());
 }
