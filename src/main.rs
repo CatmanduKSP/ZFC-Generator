@@ -21,9 +21,9 @@ fn main(){
         raw_brackets.push_str(&final_zfc);
         final_zfc = format!("{{{}}}", raw_brackets);
 
-        if nat_number == 0 {println!("100")} else {print!("\r{}%...", (i * 100) / nat_number)};
+        if nat_number == 0 {print!("\r100%...")} else {print!("\r{}%...", (i * 100) / nat_number)};
         io::stdout().flush().unwrap();
     }
 
-    println!("{}", final_zfc);
+    println!("\n{}", final_zfc);
 }
