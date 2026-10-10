@@ -1,9 +1,18 @@
 use std::io::{self, Write};
+use sysinfo::{Disks, System};
 
 fn main(){
+    //pull PC specs
+    let mut sys = System::new_all();
+    sys.refresh_memory();
+    let available_ram = sys.available_memory();
+
+    
+    //var definitions
     let mut raw_brackets = String::new();
     let mut final_zfc = String::new();
-
+    
+    //inputs
     let nat_number: u8 = loop {
         println!("Enter natural number...");
         let mut input_text = String::new();
@@ -22,6 +31,7 @@ fn main(){
         }
     };
  
+    //length and output calculator
     println!("Output length: {}", (2_u128 * (2_u128.pow(nat_number as u32))));
     for i in 0..=nat_number {
 
